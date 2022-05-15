@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/nameee"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/realnameee"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameee" />
+
+    <TextView
+        android:id="@+id/teammm"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/nameee"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nameee"
+        app:layout_constraintTop_toBottomOf="@+id/realnameee" />
+
+    <TextView
+        android:id="@+id/firstappearanceee"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/teammm"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/teammm"
+        app:layout_constraintTop_toBottomOf="@+id/teammm" />
+
+    <TextView
+        android:id="@+id/publisherrr"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/firstappearanceee"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/firstappearanceee"
+        app:layout_constraintTop_toBottomOf="@+id/firstappearanceee" />
+
+    <TextView
+        android:id="@+id/createdbyyy"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/publisherrr"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/publisherrr"
+        app:layout_constraintTop_toBottomOf="@+id/publisherrr" />
+
+    <TextView
+        android:id="@+id/biooo"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/createdbyyy"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/createdbyyy"
+        app:layout_constraintTop_toBottomOf="@+id/createdbyyy" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="@+id/biooo"
+        app:layout_constraintStart_toStartOf="@+id/biooo"
+        app:layout_constraintTop_toBottomOf="@+id/biooo"
+        tools:ignore="MissingConstraints"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

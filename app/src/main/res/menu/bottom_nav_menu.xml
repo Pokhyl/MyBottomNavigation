@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_hero"
+        android:icon="@android:drawable/star_on"
+        android:title="Hero" />
+
+    <item
+        android:id="@+id/navigation_movie"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="Movie" />
+
+    <item
+        android:id="@+id/navigation_quote"
+        android:icon="@android:drawable/star_big_on"
+        android:title="Quote" />
+
+</menu>
