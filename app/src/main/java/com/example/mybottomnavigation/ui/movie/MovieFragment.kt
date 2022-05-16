@@ -7,8 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mybottomnavigation.MainActivity
+import com.example.mybottomnavigation.MyComponent
 
 import com.example.mybottomnavigation.databinding.FragmentMovieBinding
+import com.example.mybottomnavigation.ui.hero.HeroViewModel
+import com.example.mybottomnavigation.ui.hero.HeroViewModelFactory
+import javax.inject.Inject
 
 class MovieFragment : Fragment() {
 
@@ -18,17 +23,19 @@ class MovieFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    lateinit var myComponent: MyComponent
+    lateinit var  movieViewModel: MovieViewModel
 
+    @Inject
+    lateinit var movieViewModelFactory: MovieViewModelFactory
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val movieViewModel =
-       //     ViewModelProvider(this).get(DashboardViewModel::class.java)
-            ViewModelProvider(this, MovieViewModelFactory(MovieRepository(RetrofitServiceMovie.getInstance()))).get(
-
-                MovieViewModel::class.java)
+        myComponent = (requireActivity() as MainActivity).myComponent
+        myComponent.inject(this)
+        movieViewModel = ViewModelProvider(this, movieViewModelFactory).get(MovieViewModel::class.java)
 
         _binding = FragmentMovieBinding.inflate(inflater, container, false)
         val root: View = binding.root

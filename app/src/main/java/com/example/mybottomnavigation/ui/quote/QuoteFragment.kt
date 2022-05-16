@@ -9,12 +9,21 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mybottomnavigation.MainActivity
+import com.example.mybottomnavigation.MyComponent
 import com.example.mybottomnavigation.databinding.FragmentQuoteBinding
+import com.example.mybottomnavigation.ui.movie.MovieViewModel
+import com.example.mybottomnavigation.ui.movie.MovieViewModelFactory
+import javax.inject.Inject
 
 class QuoteFragment : Fragment() {
 
     private var binding: FragmentQuoteBinding? = null
+    lateinit var myComponent: MyComponent
+    lateinit var  quoteViewModel: QuoteViewModel
 
+    @Inject
+    lateinit var quoteViewModelFactory: QuoteViewModelFactory
 
 
     override fun onCreateView(
@@ -22,7 +31,9 @@ class QuoteFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
+        myComponent = (requireActivity() as MainActivity).myComponent
+        myComponent.inject(this)
+        quoteViewModel = ViewModelProvider(this, quoteViewModelFactory).get(QuoteViewModel::class.java)
         binding = FragmentQuoteBinding.inflate(inflater, container, false)
         var adapterQuote = RvAdapterQuote(mutableListOf())
         binding!!.rw.adapter = adapterQuote

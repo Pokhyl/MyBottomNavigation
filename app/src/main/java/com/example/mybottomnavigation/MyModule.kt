@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mybottomnavigation.ui.hero.HeroViewModel
 import com.example.mybottomnavigation.ui.hero.HeroViewModelFactory
 import com.example.mybottomnavigation.ui.hero.RetrofitServiceHero
+import com.example.mybottomnavigation.ui.movie.RetrofitServiceMovie
+import com.example.mybottomnavigation.ui.quote.RetrofitServiceQuote
 import dagger.Module
 import dagger.Provides
 
@@ -13,8 +15,12 @@ class MyModule {
     fun retrofitServiceHero(): RetrofitServiceHero {
         return RetrofitServiceHero.getInstance()
     }
-//    @Provides
-//    fun heroViewModel(heroViewModelFactory: HeroViewModelFactory): HeroViewModel{
-//        return ViewModelProvider(this, heroViewModelFactory).get(HeroViewModel::class.java)
-//    }
+    @Provides
+    fun retrofitServiceMovie(): RetrofitServiceMovie{
+        return RetrofitServiceMovie.getInstance()
+    }
+    @Provides
+    fun retrofitServiceQuote(): RetrofitServiceQuote{
+        return RetrofitServiceQuote.getInstance()
+    }
 }
