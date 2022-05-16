@@ -1,5 +1,7 @@
 package com.example.mybottomnavigation.ui.hero
 
-class HeroRepository constructor(private val retrofitServiceHero: RetrofitServiceHero) {
+import javax.inject.Inject
+
+class HeroRepository @Inject constructor(private val retrofitServiceHero: RetrofitServiceHero) {
     fun getAllHeroes() = retrofitServiceHero.getAllHeroes()
 }

@@ -10,14 +10,17 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.mybottomnavigation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var myComponent: MyComponent
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        myComponent = (applicationContext as MyApplication).component
+        myComponent.inject(this)
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         val navView: BottomNavigationView = binding.navView
 //NavController - этот основной механизм Navigation Component. Именно его мы будем просить показывать на экране фрагменты.

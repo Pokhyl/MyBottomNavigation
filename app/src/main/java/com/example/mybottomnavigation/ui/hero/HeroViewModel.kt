@@ -5,8 +5,9 @@ import androidx.lifecycle.ViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class HeroViewModel constructor(private val repository:HeroRepository) : ViewModel() {
+class HeroViewModel  constructor(private val repository:HeroRepository) : ViewModel() {
     val heroList = MutableLiveData<List<Hero>>()
     val errorMessage = MutableLiveData<String>()
     var progresBar = MutableLiveData<Boolean>(true)
